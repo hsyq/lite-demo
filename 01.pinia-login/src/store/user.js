@@ -2,6 +2,13 @@ import axios from 'axios'
 import { defineStore } from 'pinia'
 
 const useUserStore = defineStore('user', {
+  persist: true,
+  // persist: {
+  //   key: "USER",
+  //   storage: sessionStorage,
+  //   paths: ["token"]
+  // },
+
   state: () => ({
     username: '',
     token: ''
