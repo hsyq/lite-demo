@@ -6,7 +6,7 @@
 
 ## 目录
 
-1. tx-axios：使用 Typescript 封装 Axios 的简单示例
+1. [pinia-login](https://github.com/hsyq/lite-demo/tree/main/01.pinia-login)：一个登录案例学会 Pinia 
 2. ...
 
 
