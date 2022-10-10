@@ -1,0 +1,22 @@
+{
+  "name": "pinia-login",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.1.0",
+    "pinia": "^2.0.22",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "mockjs": "^1.1.0",
+    "vite": "^3.1.0",
+    "vite-plugin-mock": "^2.9.6"
+  }
+}
