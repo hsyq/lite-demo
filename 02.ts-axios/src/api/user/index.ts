@@ -1,5 +1,5 @@
 import request, { http } from '@/utils/request'
-
+import type { AxiosPromise } from 'axios'
 import type { LoginData, LoginRes, UserInfoRes} from './types'
 
 // const enum USER_API {
@@ -12,6 +12,11 @@ import type { LoginData, LoginRes, UserInfoRes} from './types'
  */
 export function login(data: LoginData) {
   return http.post<LoginRes>('/user/login', data);
+}
+
+// 使用原生 axios 实例进行请求
+export function loginRaw(data: LoginData): Promise<LoginRes> {
+  return request.post('/user/login', data);
 }
 
 /**

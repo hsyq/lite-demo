@@ -72,11 +72,11 @@ export const http = {
     return service.get(url, config)
   },
 
-  post<T>(url: string, data?: any, config?: AxiosRequestConfig) :Promise<T> {
+  post<T>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<T> {
     return service.post(url, data, config)
   },
 
-  put<T, E=object>(url: string, data?: E, config?: AxiosRequestConfig) :Promise<Result<T>> {
+  put<T>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<Result<T>> {
     return service.put(url, data, config)
   },
 

@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import request from '@/utils/request'
-import { login, getUserInfo } from '@/api'
+import { login, loginRaw, getUserInfo } from '@/api'
 
 interface FormState {
   username: string;
@@ -52,6 +52,9 @@ const handleSubmit = async (values: any) => {
 
   const res = await login(form)
   console.log(res.token)
+
+  const res2 = await loginRaw(form)
+  console.log(res2.token)
   const userInfo = await getUserInfo()
   console.log(userInfo.username)
 }
