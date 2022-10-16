@@ -41,25 +41,25 @@ service.interceptors.response.use((response: AxiosResponse) => {
   }
 }, (error: AxiosError) => {
   // 处理 HTTP 网络错误
-  let message = "";
+  let message = ''
   // HTTP 状态码
   const status = error.response?.status
   switch (status) {
     case 401:
-      message = "token 失效，请重新登录";
+      message = 'token 失效，请重新登录'
       // 这里可以触发退出的 action
       break;
     case 403:
-      message = "拒绝访问";
+      message = '拒绝访问'
       break;
     case 404:
-      message = "请求地址错误";
+      message = '请求地址错误'
       break;
     case 500:
-      message = "服务器故障";
+      message = '服务器故障'
       break;
     default:
-      message = `网络连接故障`;
+      message = '网络连接故障'
   }
   
   Message.error(message) 
@@ -68,19 +68,19 @@ service.interceptors.response.use((response: AxiosResponse) => {
 
 /* 导出封装的请求方法 */
 export const http = {
-  get<T>(url: string, config?: AxiosRequestConfig) : Promise<T> {
+  get<T=any>(url: string, config?: AxiosRequestConfig) : Promise<T> {
     return service.get(url, config)
   },
 
-  post<T>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<T> {
+  post<T=any>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<T> {
     return service.post(url, data, config)
   },
 
-  put<T>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<Result<T>> {
+  put<T=any>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<Result<T>> {
     return service.put(url, data, config)
   },
 
-  delete<T>(url: string, config?: AxiosRequestConfig) : Promise<T> {
+  delete<T=any>(url: string, config?: AxiosRequestConfig) : Promise<T> {
     return service.delete(url, config)
   }
 }
