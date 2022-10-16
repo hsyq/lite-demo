@@ -53,7 +53,7 @@ pnpm install
 
 代码示例上传到[仓库](https://github.com/hsyq/lite-demo)。到最后完成后的目录结构如下：
 
-![image-20221010221819787](C:\Users\taylo\AppData\Roaming\Typora\typora-user-images\image-20221010221819787.png)
+![image-20221010221819787](https://static.kunwu.tech/images/2022-10/202210102336416.webp)
 
 
 
