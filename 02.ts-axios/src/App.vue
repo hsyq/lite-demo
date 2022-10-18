@@ -8,14 +8,14 @@
       label="用户名"
       name="username"
     >
-      <a-input v-model="loginForm.username" />
+      <a-input v-model:value="loginForm.username" />
     </a-form-item>
 
     <a-form-item
       label="密 码"
       name="password"
     >
-      <a-input-password v-model="loginForm.password" />
+      <a-input-password v-model:value="loginForm.password" />
     </a-form-item>
 
     <a-form-item>
@@ -55,6 +55,7 @@ const handleSubmit = async (values: any) => {
 
   const res2 = await loginRaw(form)
   console.log(res2.token)
+  
   const userInfo = await getUserInfo()
   console.log(userInfo.username)
 }
@@ -62,6 +63,7 @@ const handleSubmit = async (values: any) => {
 const onTestError = () => {
   request.get('/error')
 }
+
 </script>
 
 <style scoped>

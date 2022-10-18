@@ -11,7 +11,7 @@ export interface Result<T=any> {
 
 const service: AxiosInstance = axios.create({
   baseURL: '/api',
-  timeout: 30000
+  timeout: 0
 })
 
 /* 请求拦截器 */
@@ -76,7 +76,7 @@ export const http = {
     return service.post(url, data, config)
   },
 
-  put<T=any>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<Result<T>> {
+  put<T=any>(url: string, data?: object, config?: AxiosRequestConfig) :Promise<T> {
     return service.put(url, data, config)
   },
 
