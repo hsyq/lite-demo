@@ -12,7 +12,7 @@ const userStore = useUserStore()
 const onLogin = () => {
   // 使用 actions，当作函数一样直接调用
   // login action 定义为了 async 函数，所以它返回一个 Promise
-  userStore.login()
+  userStore.login(userData)
   userData.username = ''
   userData.password = ''
 }
