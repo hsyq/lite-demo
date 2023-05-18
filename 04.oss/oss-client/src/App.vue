@@ -4,6 +4,8 @@ import axios from 'axios'
 
 const fileRef = ref()
 
+const imgUrl = ref('')
+
 // 获取上传签名
 const getOssData = async () => {
   const res = await axios.get('http://localhost:3000/oss/signature')
@@ -39,6 +41,7 @@ const handleUpload = async () => {
   const res = await axios.post(ossData.host, formdata);
   if(res.status === 200) {
     alert('文件上传成功')
+    imgUrl.value = ossData.host + '/' + key
   }
 }
 
@@ -49,6 +52,8 @@ const handleUpload = async () => {
     <input type="file" ref="fileRef">
     <br>
     <button @click="handleUpload">上传</button>
+    <br>
+    <img :src="imgUrl" v-if="imgUrl" style="width: 300px;">
   </div>
 </template>
 

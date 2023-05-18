@@ -6,8 +6,8 @@ import * as dayjs from 'dayjs';
 export class OssService {
   async getSignature() {
     const config = {
-      accessKeyId: 'LTAI5t7UnDjSxtNsND6GeLxQ',
-      accessKeySecret: 'N39a19lxxN2tSbNTFzfd6yofNhXxEB',
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeyId',
       // 存储桶名字
       bucket: 'kw-tuku',
       // 文件存储路径
