@@ -14,12 +14,58 @@ datasource db {
 
 // 创建模型 
 model User {
-  id          Int      @id @default(autoincrement())
-  name        String   @unique
-  email       String   @unique
-  password    String
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+
+  // 关系字段
+  profile Profile?
+
   createdTime DateTime @default(now()) @map("created_time")
   updatedTime DateTime @updatedAt @map("updated_time")
 
   @@map("user")
 }
+
+// 一对一关系：关系字段，标量字段/外键
+model Profile {
+  id Int @id @default(autoincrement())
+
+  age    String
+  gender String
+  phone  String
+
+  // 关系字段
+  user   User @relation(fields: [userId], references: [id])
+  // 标量字段/外键
+  userId Int  @unique @map("user_id")
+
+  @@map("profile")
+}
+
+// model Post {
+//   id      Int    @id @default(autoincrement())
+//   title   String
+//   content String
+
+//   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+//   userId Int  @map("user_id")
+
+//   createdTime DateTime @default(now()) @map("created_time")
+//   updatedTime DateTime @updatedAt @map("updated_time")
+
+//   categories Category[]
+
+//   @@map("post")
+// }
+
+// model Category {
+//   id   Int    @id @default(autoincrement())
+//   name String
+//   desc String
+
+//   posts Post[]
+
+//   @@map("category")
+// }
